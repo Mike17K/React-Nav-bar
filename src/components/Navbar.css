@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+
+:root{
+    --white: rgb(255, 255, 255);
+    --green: rgb(0, 150,0);
+    --item: inherit;
+    --subcontainer: rgb(255, 176, 176);
+
+    --navHeight: 4.68rem;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    text-decoration: none;
+    cursor: pointer ;
+}
+
+
+.navbar-container{
+    position: fixed;
+    top: 0;
+    right: calc(calc(100vw - min(100%,1000px)) / 2);
+    z-index: 1;
+
+    font-family: 'Kanit', sans-serif;
+
+    width: min(100%,1000px);
+    height: var(--navHeight);    
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    
+    overflow: hidden;
+    
+    background-image: linear-gradient(90deg, hsl(211, 100%, 50%),hsl(179, 100%, 30%));
+    
+    box-shadow: 0 4px 6px 2px #888888b2;
+    border-bottom: 1px solid black;
+}
+
+
+.navbar-inner-item {
+    font-size: 18px;
+    background-color: inherit;
+    padding: calc(var(--navHeight)/2) 10px;
+
+    border: none;
+}
+
+.navbar-inner-item:hover{
+    background-color: rgba(33, 147, 223, 0.822);
+}
+/*
+.navbar-inner-item::after{
+    content: '\f0d7';
+}
+*/
+
+.logo{
+    width: var(--navHeight);
+    height: var(--navHeight);
+
+    background-color: inherit;    
+    background-image: url('../icons/logo.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.navbar-inner-item:nth-child(5){
+    margin-right: auto;
+}
+
+.round{
+    height: calc(var(--navHeight)/2);
+    border-radius: calc(var(--navHeight)/4);
+    width: auto;
+    margin-right: 10px;
+    padding: 10px;
+
+    transition: scale 0.1s;
+}
+
+.round[name='Black']{
+    background-color: rgba(0,0,0,0.8);
+    color: rgba(255,255,255);
+}
+.round[name='Pink']{
+    background-color: rgba(255,204,229,1);
+    color: rgba(0,0,0);
+}
+.round[name='Yellow']{
+    background-color: rgba(255,255,204,0.8);
+    color: rgba(0,0,0);
+}
+.round[name='Green']{
+    background-color: rgba(0,140,0,1);
+    color: rgba(255,255,255);
+}
+
+.round:hover{
+    box-shadow: 2px 2px 3px 2px #888888b2;
+    opacity: 0.8;
+    scale: 1.1;
+}

@@ -1,0 +1,98 @@
+:root{
+    --padding: 50px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.rollbar-container{
+    background-color: inherit;
+    
+    width: min(100%,1000px);
+
+    position: absolute;
+    top: calc(4.68rem + 20px);
+    right: calc(calc(100vw - min(100%,1000px)) / 2);
+    bottom: 20px;
+
+
+    background-image: linear-gradient(90deg, hsl(211, 100%, 50%),hsl(179, 100%, 30%));
+    
+    box-shadow: 0 4px 6px 2px #888888b2;
+    border: 1px solid black;
+
+    overflow: hidden;
+
+    padding-top: var(--padding);
+    
+}
+
+
+.rollbar{
+    height: 230px;
+    width: 100%;
+    transform: translate(0,0);
+    
+    background-color: inherit;
+
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.snaps-inline{
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 10px;
+}
+
+.snaps-inline > *{
+    scroll-snap-align: start;
+}
+
+.rollbar-chunk{
+    display: grid;
+    grid-auto-flow: column;
+
+}
+
+.rollbar .item{    
+    height: 200px;
+    width: 200px;
+
+    background-color: rgb(255, 193, 193);
+    border-radius: 5px;
+    margin: auto;
+    margin-left: 10px;
+    text-align: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+
+width: 10px;
+height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1;
+box-shadow: inset 0 0 5px grey;
+border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #888;
+border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555;
+} 
+
+::-webkit-scrollbar-button{
+    color: black
+}
